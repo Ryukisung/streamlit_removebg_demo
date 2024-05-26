@@ -1,0 +1,1 @@
+streamlit run bg_remove.py
