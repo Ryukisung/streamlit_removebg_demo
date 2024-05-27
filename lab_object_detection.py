@@ -22,16 +22,38 @@ def convert_image(img):
     return byte_im
 
 
-def fix_image(upload):
+# def fix_image(upload):
+#     image = Image.open(upload)
+#     col1.write("Original Image :camera:")
+#     col1.image(image)
+
+#     fixed = remove(image)
+#     col2.write("Output Image :wrench:")
+#     col2.image(fixed)
+#     st.sidebar.markdown("\n")
+#     st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+
+def detect(upload):
+
+    ####### Show Original Image
     image = Image.open(upload)
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    fixed = remove(image)
-    col2.write("Output Image :wrench:")
-    col2.image(fixed)
-    st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+
+    ######## ---> 1. Your object detection code (integrate with your api)
+    # fixed = remove(image)
+    
+
+    ######## ---> 2. Show ouput image 
+    # col2.write("Output Image :wrench:")
+    # col2.image(fixed)
+
+
+    ######## --> 3. Download Output Image
+    # st.sidebar.markdown("\n")
+    # st.sidebar.download_button("Download result image", convert_image(fixed), "fixed.png", "image/png")
+
 
 
 col1, col2 = st.columns(2)
@@ -41,6 +63,6 @@ if my_upload is not None:
     if my_upload.size > MAX_FILE_SIZE:
         st.error("The uploaded file is too large. Please upload an image smaller than 5MB.")
     else:
-        fix_image(upload=my_upload)
+        detect(upload=my_upload)
 else:
-    fix_image("./zebra.jpg")
+    detect("./zebra.jpg")
