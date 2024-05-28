@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#1f77b4"   # สีหลัก
+backgroundColor = "#f0f2f6" # สีพื้นหลัง
+secondaryBackgroundColor = "#e0e0e0" # สีพื้นหลังที่สอง
+textColor = "#333333"      # สีข้อความ
+font = "sans serif"        # แบบอักษร
